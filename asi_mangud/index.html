@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Games – Eesti</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <h1>Mini Games</h1>
+  <nav class="menu">
+    <button class="tab active" data-screen="home">Avaleht</button>
+    <button class="tab" data-screen="game1">1) Küsimused</button>
+    <button class="tab" data-screen="game2">2) Tõene/Väär</button>
+    <button class="tab" data-screen="game3">3) Memory</button>
+    <button class="tab" data-screen="game4">4) Wordle</button>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- HOME -->
+  <section id="home" class="screen show">
+    <h2>Tere!</h2>
+    <p class="muted">Vali mäng ülevalt 👆</p>
+  </section>
+
+  <!-- GAME 1 -->
+  <section id="game1" class="screen">
+    <h2>Mäng 1: 10 küsimust</h2>
+
+    <div class="progress">
+      <div class="count" id="g1-count">0/10</div>
+      <div class="bar"><span id="g1-bar"></span></div>
+    </div>
+
+    <p id="g1-question" class="question"></p>
+    <div id="g1-answers" class="answers answers-quiz"></div>
+
+    <div id="g1-result" class="result-box" style="display:none;">
+      <p class="title">Tulemus</p>
+      <p class="score" id="g1-score"></p>
+      <p class="note muted" id="g1-note"></p>
+      <button class="secondary" id="g1-restart">Mängi uuesti</button>
+    </div>
+
+    <button class="secondary" id="g1-start">Alusta</button>
+  </section>
+
+  <!-- GAME 2 -->
+  <section id="game2" class="screen">
+    <h2>Mäng 2: Tõene / Väär (10)</h2>
+
+    <div class="progress">
+      <div class="count" id="g2-count">0/10</div>
+      <div class="bar"><span id="g2-bar"></span></div>
+    </div>
+
+    <p id="g2-question" class="question"></p>
+
+    <div class="tf-row">
+      <button id="g2-true">TÕENE</button>
+      <button id="g2-false">VÄÄR</button>
+    </div>
+
+    <div id="g2-result" class="result-box" style="display:none;">
+      <p class="title">Tulemus</p>
+      <p class="score" id="g2-score"></p>
+      <p class="note muted" id="g2-note"></p>
+      <button class="secondary" id="g2-restart">Mängi uuesti</button>
+    </div>
+
+    <button class="secondary" id="g2-start">Alusta</button>
+  </section>
+
+  <!-- GAME 3 (Memory) -->
+  <section id="game3" class="screen">
+    <h2>Mäng 3: Memory</h2>
+    <p class="muted">Leia paarid (pildid või tekst).</p>
+
+    <div class="grid" id="g3-grid"></div>
+    <p class="msg" id="g3-msg"></p>
+    <button class="secondary" id="g3-restart">Uuesti</button>
+  </section>
+
+  <!-- GAME 4 (Wordle) -->
+  <section id="game4" class="screen">
+    <h2>Mäng 4: Eesti Wordle</h2>
+    <p class="muted">Arva 5-täheline Eesti-teemaline sõna (Õ Ä Ö Ü).</p>
+
+    <div class="wordle-wrap">
+      <div class="wordle-game" id="w-game"></div>
+      <div class="wordle-message" id="w-message"></div>
+      <div class="wordle-keyboard" id="w-keyboard"></div>
+
+      <button class="secondary" id="w-restart-btn" style="visibility:hidden; opacity:0;">
+        Uus mäng
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

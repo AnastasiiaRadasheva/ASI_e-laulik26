@@ -1,0 +1,352 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: system-ui, Arial;
+    background: #0f1115;
+    color: #fff;
+}
+
+.topbar {
+    padding: 16px;
+    border-bottom: 1px solid #222;
+    background: #0b0d12;
+}
+
+h1 { margin: 0 0 12px; font-size: 20px; }
+
+.menu { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.tab {
+    padding: 10px 12px;
+    border: 1px solid #2a2f3a;
+    background: #121623;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.tab.active { border-color: #6c8cff; }
+.tab:hover { filter: brightness(1.08); }
+
+.wrap { max-width: 900px; margin: 0 auto; padding: 16px; }
+
+.screen {
+    display: none;
+    padding: 16px;
+    border: 1px solid #222;
+    border-radius: 14px;
+    background: #0b0d12;
+}
+.screen.show { display: block; }
+
+.question { font-size: 18px; line-height: 1.35; margin: 8px 0 12px; }
+
+.answers {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.row { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
+
+button {
+    padding: 12px 14px;
+    border: 1px solid #2a2f3a;
+    background: #121623;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+}
+button:hover { filter: brightness(1.08); }
+
+.secondary { opacity: .92; }
+
+.msg { margin-top: 10px; min-height: 22px; color: #cbd5ff; }
+.muted { opacity: .75; }
+code { background: #111624; padding: 2px 6px; border-radius: 8px; border: 1px solid #2a2f3a; }
+
+/* ===== Memory (flip + pildid/tekst) ===== */
+.grid{
+    display:grid;
+    grid-template-columns: repeat(4, 92px);
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.card{
+    width: 92px; height: 92px;
+    perspective: 800px;
+    cursor: pointer;
+}
+
+.cardInner{
+    width: 100%; height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .25s ease;
+    border-radius: 14px;
+}
+
+.card.open .cardInner{ transform: rotateY(180deg); }
+.card.done{ opacity: .55; pointer-events: none; }
+
+.face{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    border-radius: 14px;
+    border: 1px solid #2a2f3a;
+    backface-visibility: hidden;
+    background: #121623;
+    overflow: hidden;
+}
+
+.front{ transform: rotateY(180deg); }
+.back{
+    font-size: 28px;
+    opacity: .9;
+}
+
+.front img{
+    width:100%; height:100%;
+    object-fit: cover;
+    display:block;
+}
+
+/* väiksemal ekraanil */
+@media (max-width: 420px){
+    .grid{ grid-template-columns: repeat(3, 92px); }
+    .answers{ grid-template-columns: 1fr; }
+}
+
+
+/* ===== Wordle (Game 4) – CENTER FIX ===== */
+
+.wordle-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* ⬅️ KÕIK keskele */
+    justify-content: center;
+    padding-bottom: 120px;
+}
+
+/* mänguväljak (ruudud) */
+.wordle-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* ⬅️ ruudud keskele */
+    margin: 12px 0 16px;
+}
+
+.wordle-game .row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 6px;
+    justify-content: center;    /* ⬅️ rida keskele */
+}
+
+.wordle-game .tile {
+    width: 52px;
+    height: 52px;
+    border: 2px solid #3a3a3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 12px;
+    user-select: none;
+}
+
+/* ===== Keyboard ===== */
+
+.wordle-keyboard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* ⬅️ klaviatuur keskele */
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+}
+
+.wordle-keyboard .kb-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;    /* ⬅️ iga rida keskele */
+    gap: 6px;
+    min-width: max-content;
+}
+
+.wordle-keyboard button {
+    --kW: clamp(28px, 7vw, 44px);
+    --kH: clamp(44px, 9vw, 56px);
+
+    width: var(--kW);
+    height: var(--kH);
+    border-radius: 12px;
+    border: none;
+    background-color: #8a8a8a;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    flex: 0 0 auto;
+}
+
+.wordle-keyboard button.big {
+    width: calc(var(--kW) * 1.7);
+}
+
+.wordle-keyboard button:active {
+    filter: brightness(0.9);
+}
+
+/* ===== Message ===== */
+
+.wordle-message {
+    display: flex;
+    justify-content: center;    /* ⬅️ sõnum keskele */
+}
+
+.wordle-message p {
+    padding: 10px 14px;
+    border-radius: 12px;
+    margin: 8px 0 0;
+    background: #2a2f3a;
+    border: 1px solid #3a3a3c;
+}
+
+/* flip anim */
+.tile.flip { animation: 0.4s linear flipping; }
+
+@keyframes flipping {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(90deg); }
+    100% { transform: rotateX(0deg); }
+}
+
+/* overlays */
+.grey-overlay,
+.yellow-overlay,
+.green-overlay {
+    border: none !important;
+}
+
+.grey-overlay { background-color: #3a3a3c !important; }
+.yellow-overlay { background-color: #b59f3a !important; }
+.green-overlay { background-color: #538d4e !important; }
+
+/* responsive */
+@media (max-width: 420px) {
+    .wordle-game .tile {
+        width: 46px;
+        height: 46px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .wordle-keyboard .kb-row {
+        gap: 4px;
+    }
+}
+
+/* ===== Game 1 + Game 2 (10 küsimust + tulemus) ===== */
+
+.quiz-wrap {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 8px 0 12px;
+    opacity: .9;
+}
+
+.progress .count {
+    font-size: 14px;
+    color: #cbd5ff;
+}
+
+.progress .bar {
+    flex: 1;
+    height: 10px;
+    border-radius: 999px;
+    border: 1px solid #2a2f3a;
+    background: #111624;
+    overflow: hidden;
+}
+
+.progress .bar > span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #6c8cff;
+    border-radius: 999px;
+    transition: width .25s ease;
+}
+
+.answers.answers-quiz {
+    grid-template-columns: 1fr; /* quizis parem üks veerg */
+    gap: 10px;
+}
+
+.answers.answers-quiz button {
+    text-align: left;
+    padding: 14px 14px;
+}
+
+.result-box {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid #2a2f3a;
+    background: #111624;
+}
+
+.result-box .title {
+    font-weight: 700;
+    margin: 0 0 6px;
+    border: none;
+    width: auto;
+}
+
+.result-box .score {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.result-box .note {
+    margin: 6px 0 0;
+    opacity: .8;
+}
+
+/* Vastuse tagasiside (õige/vale) */
+.btn-correct {
+    border-color: #538d4e !important;
+    background: rgba(83,141,78,.18) !important;
+}
+
+.btn-wrong {
+    border-color: #8b2e2e !important;
+    background: rgba(139,46,46,.18) !important;
+}
+
+/* Nupugrupp (Tõene/Väär) */
+.tf-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+/* Väike ekraan */
+@media (max-width: 520px){
+    .tf-row { grid-template-columns: 1fr; }
+}
