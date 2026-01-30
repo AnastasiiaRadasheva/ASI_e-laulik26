@@ -25,7 +25,7 @@ Rakenduses on koondatud erinevad lehed (uudised, sündmused, galerii, mängud) n
 
 ## Käivitamine (kohalikult)
 1. Ava brauseris:
-   - `https://ekoidula.ee/`
+   - https://ekoidula.ee/
   
 
 ## Kasutamine
