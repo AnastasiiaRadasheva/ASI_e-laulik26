@@ -1,0 +1,385 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial;
+  background: #0f1115;
+  color: #fff;
+}
+
+/* ===== BIGGER UI (без ломания структуры) ===== */
+:root{
+  --wrapW: 1120px;          /* было 900px */
+  --screenPad: 22px;        /* было 16px */
+  --btnPadV: 14px;          /* было 12px */
+  --btnPadH: 16px;          /* было 14px */
+  --qSize: 20px;            /* вопрос */
+  --baseText: 16px;         /* общий текст */
+  --tile: 60px;             /* Wordle плитка (desktop) */
+  --tileSm: 54px;           /* Wordle плитка (mobile) */
+  --gap: 12px;              /* базовый gap */
+  --memSize: 120px;         /* Memory карточки (desktop) */
+  --memSizeSm: 104px;       /* Memory карточки (mobile) */
+}
+
+.wrap{
+  max-width: var(--wrapW);
+  margin: 0 auto;
+  padding: 18px;
+  font-size: var(--baseText);
+  line-height: 1.45;
+}
+
+h1{
+  margin: 0 0 14px;
+  font-size: 24px;          /* было 20px */
+  letter-spacing: .2px;
+}
+
+h2{
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+
+.muted{ opacity: .78; }
+
+/* чуть приятнее верх */
+.topbar {
+  padding: 18px;
+  border-bottom: 1px solid #222;
+  background: #0b0d12;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* меню/табы */
+.menu { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.tab {
+  padding: 12px 14px;       /* было 10x12 */
+  border: 1px solid #2a2f3a;
+  background: #121623;
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform .15s ease, filter .15s ease, border-color .15s ease;
+}
+
+.tab.active { border-color: #6c8cff; }
+.tab:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+/* экраны */
+.screen {
+  display: none;
+  padding: var(--screenPad);
+  border: 1px solid #222;
+  border-radius: 16px;
+  background: #0b0d12;
+  box-shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+
+.screen.show { display: block; }
+
+.question {
+  font-size: var(--qSize);
+  line-height: 1.35;
+  margin: 10px 0 14px;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+  margin: 14px 0;
+}
+
+.row { display: flex; gap: 12px; flex-wrap: wrap; margin: 12px 0; }
+
+button {
+  padding: var(--btnPadV) var(--btnPadH);
+  border: 1px solid #2a2f3a;
+  background: #121623;
+  color: #fff;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform .15s ease, filter .15s ease, border-color .15s ease;
+}
+
+button:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+.secondary { opacity: .92; }
+
+.msg {
+  margin-top: 12px;
+  min-height: 24px;
+  color: #cbd5ff;
+  font-size: 16px;
+}
+
+code {
+  background: #111624;
+  padding: 2px 6px;
+  border-radius: 8px;
+  border: 1px solid #2a2f3a;
+}
+
+/* ===== Memory ===== */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(4, var(--memSize));
+  gap: 14px;
+  margin: 14px 0;
+  justify-content: start;
+}
+
+.card{
+  width: var(--memSize);
+  height: var(--memSize);
+  perspective: 900px;
+  cursor: pointer;
+}
+
+.cardInner{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .25s ease;
+  border-radius: 16px;
+}
+
+.card.open .cardInner{ transform: rotateY(180deg); }
+.card.done{ opacity: .55; pointer-events: none; }
+
+.face{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 16px;
+  border: 1px solid #2a2f3a;
+  backface-visibility: hidden;
+  background: #121623;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.back{ font-size: 34px; opacity: .9; }
+.front{ transform: rotateY(180deg); }
+.front img{ width:100%; height:100%; object-fit: cover; display:block; }
+
+/* ===== Wordle – CENTER FIX ===== */
+.wordle-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 120px;
+}
+
+.wordle-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 14px 0 18px;
+}
+
+.wordle-game .row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  justify-content: center;
+}
+
+.wordle-game .tile {
+  width: var(--tile);
+  height: var(--tile);
+  border: 2px solid #3a3a3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 800;
+  border-radius: 14px;
+  user-select: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+/* ===== Keyboard ===== */
+.wordle-keyboard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.wordle-keyboard .kb-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 8px;
+  min-width: max-content;
+}
+
+.wordle-keyboard button {
+  --kW: clamp(32px, 7.2vw, 52px);
+  --kH: clamp(48px, 9.2vw, 64px);
+  width: var(--kW);
+  height: var(--kH);
+  border-radius: 14px;
+  border: none;
+  background-color: #8a8a8a;
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  flex: 0 0 auto;
+  font-size: 16px;
+  transition: transform .12s ease, filter .12s ease;
+}
+
+.wordle-keyboard button.big { width: calc(var(--kW) * 1.75); }
+.wordle-keyboard button:active { filter: brightness(0.9); transform: translateY(1px); }
+
+/* ===== Message ===== */
+.wordle-message { display: flex; justify-content: center; }
+
+.wordle-message p {
+  padding: 12px 16px;
+  border-radius: 14px;
+  margin: 10px 0 0;
+  background: #2a2f3a;
+  border: 1px solid #3a3a3c;
+  font-size: 16px;
+}
+
+/* flip anim */
+.tile.flip { animation: 0.4s linear flipping; }
+
+@keyframes flipping {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+/* overlays */
+.grey-overlay, .yellow-overlay, .green-overlay { border: none !important; }
+.grey-overlay { background-color: #3a3a3c !important; }
+.yellow-overlay { background-color: #b59f3a !important; }
+.green-overlay { background-color: #538d4e !important; }
+
+/* ===== Game 1 + Game 2 ===== */
+.quiz-wrap { max-width: 760px; margin: 0 auto; }
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 10px 0 14px;
+  opacity: .92;
+}
+
+.progress .count { font-size: 15px; color: #cbd5ff; }
+
+.progress .bar {
+  flex: 1;
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid #2a2f3a;
+  background: #111624;
+  overflow: hidden;
+}
+
+.progress .bar > span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #6c8cff;
+  border-radius: 999px;
+  transition: width .25s ease;
+}
+
+.answers.answers-quiz {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.answers.answers-quiz button {
+  text-align: left;
+  padding: 16px 16px;
+  font-size: 16px;
+}
+
+.result-box {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid #2a2f3a;
+  background: #111624;
+  box-shadow: 0 16px 40px rgba(0,0,0,.30);
+}
+
+.result-box .title { font-weight: 800; margin: 0 0 8px; border: none; width: auto; }
+.result-box .score { font-size: 26px; font-weight: 900; margin: 0; }
+.result-box .note { margin: 8px 0 0; opacity: .82; font-size: 15px; }
+
+.btn-correct { border-color: #538d4e !important; background: rgba(83,141,78,.18) !important; }
+.btn-wrong { border-color: #8b2e2e !important; background: rgba(139,46,46,.18) !important; }
+
+.tf-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+/* ===== Responsive (увеличено, но аккуратно) ===== */
+@media (max-width: 900px){
+  :root{
+    --wrapW: 980px;
+    --tile: 56px;
+    --memSize: 112px;
+  }
+}
+
+@media (max-width: 520px){
+  :root{
+    --tile: var(--tileSm);
+    --memSize: var(--memSizeSm);
+  }
+
+  .answers{ grid-template-columns: 1fr; }
+  .tf-row { grid-template-columns: 1fr; }
+
+  .grid{
+    grid-template-columns: repeat(3, var(--memSize));
+    justify-content: start;
+  }
+
+  h1{ font-size: 22px; }
+  h2{ font-size: 20px; }
+}
+
+@media (max-width: 420px){
+  :root{
+    --tile: 50px;
+    --memSize: 98px;
+  }
+
+  .wordle-keyboard .kb-row{ gap: 6px; }
+}
+
+@media (max-width: 360px){
+  :root{
+    --tile: 46px;
+    --memSize: 92px;
+  }
+
+  .wordle-keyboard .kb-row{ gap: 5px; }
+}
