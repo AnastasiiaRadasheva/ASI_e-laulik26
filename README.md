@@ -17,28 +17,29 @@ Rakenduses on koondatud erinevad lehed (uudised, sündmused, galerii, mängud) n
 - Sisu laadimine välisest allikast ning kuvamine veebilehel
 
 3) Sisu lehed
-##Kodu
+## Kodu
 Avaleht, mis tutvustab projekti eesmärki ja ideed.
+<img width="1895" height="1128" alt="image" src="https://github.com/user-attachments/assets/c0233eaf-de8b-45c1-8142-1ba6030563f8" />
 
-##Uudised
+## Uudised
 Võimaldab valida piirkonna või allika ning kuvab uudised RSS/XML voogudest. Pealkirjale vajutades avaneb originaallugu.
 
-##Sündmused
+## Sündmused
 Kuvab kultuuriürituste ja sündmuste info ühel lehel.
 
-##Galerii
+## Galerii
 Näitab visuaalset sisu Eesti kultuuri teemadel.
 
-##Mängud
+## Mängud
 Sisaldab interaktiivseid lehti meelelahutuseks ja õppimiseks.
 
-##Muuseumid
+## Muuseumid
 Esitab 10 Eesti muuseumi nimekirja koos lühikirjeldusega.
 
-##Rahvustoit
+## Rahvustoit
 Tutvustab Eesti traditsioonilisi toite.
 
-##Viited ja allikad
+## Viited ja allikad
 Sisaldab kasutatud allikate ja RSS-voogude infot.
 
 ## Käivitamine (kohalikult)
