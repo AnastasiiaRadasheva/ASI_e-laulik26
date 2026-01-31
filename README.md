@@ -11,7 +11,9 @@ For some, an [RSS generator](https://rss.app/rss-feed/rss-builder) was used.
 ## Käivitamine (kohalikult)
 1. Ava brauseris:
    - https://ekoidula.ee/
-  
+Rakendus on hostitud zone.ee serveris.
+Hindajatel ei ole vaja ligipääsu hostingule.
+Avalik link on piisav testimiseks.
 
 ## Kasutamine
 - Navigeeri menüü kaudu lehtede vahel.
