@@ -14,7 +14,7 @@ Rakenduses on koondatud erinevad lehed (uudised, sündmused, galerii, mängud) n
 - Ühtne stiil (style.css)
 
 2) Veebiandmete kasutamine
-- RSS / XML põhine uudiste leht (nt `uudised` / `XMLphp_project`)
+- RSS / XML põhine uudiste leht (nt `uudised` / `sundmused`)
 - Sisu laadimine välisest allikast ning kuvamine veebilehel
 
 3) Sisu lehed
@@ -40,10 +40,12 @@ Olulisemad failid/kaustad :
 - `nav.php` — navigatsioonimenüü (kasutatakse mitmel lehel)
 - `footer.php` — jalus (kui kasutusel)
 - `style.css` — ühine kujundus
-- `XMLphp_project/` — RSS/XML uudiste loogika ja lehed (kui kasutusel)
 - `sundmused/` — sündmuste lehed
 - `1index/public/` — galerii (kui kasutusel)
 - `asi_mangud/` — mängude lehed
+- `muuseumid.php` — 10 muuseumi, mis aitavad Eestit päriselt mõista
+-  `soo.php` —  Eesti rahvustoit
+-  `viitet.php` — Viited & allikad
 
 ## Kasutatud allikad ja autoriõigused
 - Uudiste kuvamiseks kasutatakse RSS/XML veebiandmeid (vastavad feed-id on koodis konfigureeritud).
