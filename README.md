@@ -7,7 +7,6 @@ Tüüp: Veebirakendus (PHP + HTML/CSS, XML/RSS, JS)
 “Koidulauliku E-laulik” on lihtne veebirakendus, mis aitab kasutajal (Koidulauliku vaimul) tutvuda Eesti nüüdisaegse kultuuri ja infoga ühest kohast.  
 Rakenduses on koondatud erinevad lehed (uudised, sündmused, galerii, mängud) ning osa sisust võetakse veebiallikatest (nt RSS/XML).
 
-## Nõuete katvus
 1) Veebirakendus ja navigeerimine
 - Avaleht / Kodu
 - Ühtne navigeerimismenüü (nav.php)
@@ -18,10 +17,29 @@ Rakenduses on koondatud erinevad lehed (uudised, sündmused, galerii, mängud) n
 - Sisu laadimine välisest allikast ning kuvamine veebilehel
 
 3) Sisu lehed
-- Uudised
-- Sündmused
-- Galerii
-- Mängud
+##Kodu
+Avaleht, mis tutvustab projekti eesmärki ja ideed.
+
+##Uudised
+Võimaldab valida piirkonna või allika ning kuvab uudised RSS/XML voogudest. Pealkirjale vajutades avaneb originaallugu.
+
+##Sündmused
+Kuvab kultuuriürituste ja sündmuste info ühel lehel.
+
+##Galerii
+Näitab visuaalset sisu Eesti kultuuri teemadel.
+
+##Mängud
+Sisaldab interaktiivseid lehti meelelahutuseks ja õppimiseks.
+
+##Muuseumid
+Esitab 10 Eesti muuseumi nimekirja koos lühikirjeldusega.
+
+##Rahvustoit
+Tutvustab Eesti traditsioonilisi toite.
+
+##Viited ja allikad
+Sisaldab kasutatud allikate ja RSS-voogude infot.
 
 ## Käivitamine (kohalikult)
 1. Ava brauseris:
