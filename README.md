@@ -1,6 +1,6 @@
 # Koidulauliku E-laulik — Eesti kultuuri veebirakendus
 
-Projekt: ASI Karika 2026 koduvoor — “Koidulauliku E-laulik”  
+Projekt: ASI 2026 koduvoor — “Koidulauliku E-laulik”  
 Tüüp: Veebirakendus (PHP + HTML/CSS, XML/RSS, JS)  
 
 ## Lühikirjeldus
