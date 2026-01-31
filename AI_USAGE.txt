@@ -1,0 +1,71 @@
+Kasutatud AI tööriist:
+
+ChatGPT (OpenAI)
+
+========================================
+
+AI kasutamise üldkirjeldus
+
+ChatGPT-d kasutati arenduse käigus ettevõtluse ideede selgitamiseks, tehniliste küsimuste lahendamiseks ning vigade tuvastamiseks ja parandamiseks.
+AI abi kasutati ainult tinglikult toetava vahendina ja EI kasutatud mängu / projekti põhiloogika, arhitektuuri, sisu või funktsionaalsuse automaatseks genereerimiseks.
+Kõik failid, kood, kujundus, sisu ja projektistruktuur loodi ja viidi ellu ainult projektimeeskonna poolt käsitsi.
+AI-abi kasutamise eesmärk oli eelkõige:
+Arusaam keerulisematest tehnilistest kontseptsioonidest,
+Soovituste ja paranduste pakkumine,
+
+Probleemide diagnoosimine ja arusaadavaks tegemine.
+
+========================================
+
+Valdkonnad, kus AI abi kasutati
+
+ Projektistruktuur ja konfiguratsioon
+Seotud failid / teemad:
+ei ole otseseid skripte — üldine struktuur
+Kasutuse kirjeldus:
+ChatGPT-d kasutati:
+
+Et mõista GitHub /RSS / projektikaustade struktuuri,
+Selgitamaks sõltuvuste lisamise või seadistamise põhimõtteid,
+Abi saamiseks README ning arendusjuhiste koostamisel.
+AI ei genereerinud ega muutnud ühtegi faili automaatselt.
+
+
+ChatGPT-d kasutati:
+
+Sisendi loogika mõistmiseks,
+Probleemide diagnoosimiseks, kus mingi stsenaarium ei andnud soovitud tulemust,
+Soovituste saamiseks, kuidas vigade korral käitumist parandada või paremini formuleerida.
+
+AI-abi ei kasutanud:
+Funktsioonide automaatseks genereerimiseks,
+Logika automatiseerimiseks,
+Koodi või skriptide automaatseks koostamiseks.
+
+README, dokumentatsiooni ja teksti parandamine
+
+Seotud failid:
+README.md
+
+Tekstiansamblite lihtsustamiseks või grammatikapõhisteks parandusteks,
+
+Kirjelduse selgitamiseks, et see oleks lugeja jaoks arusaadavam.
+
+========================================
+
+Täiendav selgitus projekti algfaasi kohta!!
+Projekti algfaasis oli algselt kavandatud lahendus, mis põhines Node.js kasutamisel. Selle tehnoloogia uurimiseks ja 
+testimiseks kasutati erinevaid avatud õppematerjale, dokumentatsiooni ning AI-põhiseid abivahendeid, et mõista serveripoolse loogika ja veebirakenduste tööpõhimõtteid.
+Arendusprotsessi käigus jõuti järeldusele, et Node.js lahendus 
+ei paku antud projekti eesmärkide jaoks piisavat lisaväärtust ning muudaks süsteemi põhjendamatult keerulisemaks. Seetõttu otsustas projektitiim sellest
+tehnilisest suunast loobuda ning keskenduda lihtsamale ja eesmärgipärasemale arhitektuurile.
+Oluline on märkida, et Node.js etapis kasutatud AI abi ja õppematerjalid olid suunatud õppe- ja katsetusfaasi, mitte lõplikku toodangusse. 
+Kõik lõplikud arhitektuurilised otsused, tehnoloogia valik ja realiseerimine tehti projektimeeskonna poolt käsitsi.
+
+
+
+========================================
+
+Kokkuvõte
+ChatGPT-d kasutati ainult tehnilise abivahendina selgituste ja vigade lahendamiseks.
+AI ei kasutatud projekti loogika, sisu ega funktsionaalsuse loomiseks. Kõik lahendused ja lõplik teostus loodi projektimeeskonna poolt käsitsi.
