@@ -6,6 +6,7 @@ Tüüp: Veebirakendus (PHP + HTML/CSS, XML/RSS, JS)
 ## Lühikirjeldus
 “Koidulauliku E-laulik” on lihtne veebirakendus, mis aitab kasutajal (Koidulauliku vaimul) tutvuda Eesti nüüdisaegse kultuuri ja infoga ühest kohast.  
 Rakenduses on koondatud erinevad lehed (uudised, sündmused, galerii, mängud) ning osa sisust võetakse veebiallikatest (nt RSS/XML).
+For some, an [RSS generator](https://rss.app/rss-feed/rss-builder) was used.
 
 ## Käivitamine (kohalikult)
 1. Ava brauseris:
