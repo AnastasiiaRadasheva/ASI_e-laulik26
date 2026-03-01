@@ -20,18 +20,22 @@
 
     <div id='viited'>
       <ul>
-        <li><a href="https://www.postimees.ee/" target="_blank">Postimees</a></li>
-        <li><a href="https://tartu.postimees.ee/" target="_blank">Tartu Postimees</a></li>
-        <li><a href="https://parnu.postimees.ee/" target="_blank">Pärnu Postimees</a></li>
+        <li><a href="https://www.postimees.ee/" target="_blank">Postimees/Tartu/Pärnu</a></li>
         <li><a href="https://saartehaal.postimees.ee/" target="_blank">Saarte Hääl</a></li>
         <li><a href="https://pohjarannik.postimees.ee/" target="_blank">Põhjarannik</a></li>
-
         <li><a href="https://www.err.ee/" target="_blank">ERR Uudised</a></li>
-        <li><a href="https://www.ohtuleht.ee/" target="_blank">Õhtuleht</a></li>
+        <li><a href="https://www.ohtuleht.ee/" target="_blank">Õhtuleht/Tartu/Pärnu/Narva</a></li>
         <li><a href="https://eestiuudised.ee/" target="_blank">Eesti Uudised</a></li>
         <li><a href="https://kuku.pleier.ee/uudised" target="_blank">Kuku Raadio Uudised</a></li>
         <li><a href="https://www.aripaev.ee/uudised" target="_blank">Äripäev</a></li>
         <li><a href="https://www.kultuur.info/" target="_blank">Kultuur.info</a></li>
+        <li><a href="https://concert.ee/en/festivals/" target="_blank">Concert.ee</a></li>
+        <li><a href="https://www.delfi.ee/teema/23303903/tartu" target="_blank">Delfi</a></li>
+        <li><a href="https://www.sirp.ee/" target="_blank">Sirp</a></li>
+<li><a href="https://www.piletilevi.ee/" target="_blank">Piletilevi</a></li>
+<li><a href="https://www.sirp.ee/" target="_blank">Sirp</a></li>
+<li><a href="https://eestiuudised.ee/" target="_blank">Eesti Uudised</a></li>
+<li><a href="https://kultuurikeskus.eu/" target="_blank">Kultuurikeskus</a></li>
       </ul>
     </div>
 
