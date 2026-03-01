@@ -18,6 +18,45 @@
   display: block;
 }
 
+.events-search{
+  width: min(1200px, 92vw);
+  margin: 14px auto 16px;
+  display: block;
+  position: relative;
+  z-index: 2000; 
+}
+
+.events-search__input{
+  width: 100%;
+  display: block;
+  padding: 14px 16px;
+  border-radius: 14px;
+
+  /* делаем контрастнее, чтобы не "сливалось" */
+  border: 1px solid rgba(255,255,255,.28);
+  background: rgba(0,0,0,.30);
+  color: #fff;
+
+  outline: none;
+  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+}
+
+.events-search__input:focus{
+  border-color: rgba(184,149,179,.75);
+  box-shadow: 0 14px 30px rgba(0,0,0,.35);
+}
+
+.events-search__input::placeholder{
+  color: rgba(255,255,255,.70);
+}
+
+.events-search__info{
+  margin-top: 8px;
+  font-size: 14px;
+  color: rgba(255,255,255,.85);
+}
+
+
 body{
   margin:0;
   font-family: Verdana, sans-serif;
@@ -86,7 +125,6 @@ header{
   white-space: nowrap;
 }
 
-/* Menu */
 
 #nav0 ul{
   list-style: none;
@@ -602,19 +640,11 @@ footer{
 }
 
 
-
-/* =========================
-   HOME INTRO — сделать особенным
-   (НЕ ломает сетку/структуру)
-========================= */
-
-/* сама карточка приветствия */
 .home-page #home-intro{
   position: relative;
-  padding: 22px 18px 18px;                 /* чуть больше воздуха */
+  padding: 22px 18px 18px;                 
   border-radius: 20px;
 
-  /* делаем более "премиум" */
   background:
     radial-gradient(900px 260px at 20% 0%, rgba(184,149,179,.28), rgba(0,0,0,0) 60%),
     linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.06));
@@ -636,7 +666,6 @@ footer{
   opacity: .9;
 }
 
-/* тонкая акцентная полоса слева */
 .home-page #home-intro::after{
   content:"";
   position:absolute;
@@ -649,7 +678,6 @@ footer{
   box-shadow: 0 0 18px rgba(184,149,179,.35);
 }
 
-/* заголовок приветствия — больше и ярче */
 .home-page #home-intro .home-title{
   font-size: 24px;
   letter-spacing: .2px;
@@ -768,9 +796,6 @@ footer{
 }
 
 
-/* =========================
-   MUSEUMS – FULL CARDS + MAP INSIDE EACH CARD
-========================= */
 .museums-page{
   width: min(1200px, 92vw);
   margin: 0 auto 40px;
@@ -918,7 +943,6 @@ footer{
   border: 1px solid rgba(0,0,0,.10);
 }
 
-/* responsive */
 @media (max-width: 980px){
   .museums-grid{ grid-template-columns: 1fr; }
   .museum-card__media{ height: 210px; }
@@ -927,4 +951,140 @@ footer{
 @media (max-width: 520px){
   .museum-card__media{ height: 200px; }
   .museum-card__iframe{ height: 200px; }
+}
+
+.home-page .home-hero{
+  grid-column: 1 / -1;
+  position: relative;
+  padding: 50px 0 40px;
+}
+
+.home-page .home-hero::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  width:100vw;
+  height:100%;
+
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.18)
+  );
+
+  z-index:-1;
+}
+
+.home-page #home-start{ margin-top: 0 !important; }
+
+.home-page .home-hero{
+  grid-column: 1 / -1;
+  position: relative;
+  padding: 50px 0 35px;
+
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr; /* как у твоего home-grid */
+  gap: 18px;
+  align-items: start;
+}
+
+/* фон на всю ширину экрана */
+.home-page .home-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  left:50%;
+  transform: translateX(-50%);
+  width:100vw;
+  height:100%;
+  background: linear-gradient(to right, rgba(0,0,0,.45), rgba(0,0,0,.18));
+  z-index:-1;
+}
+
+.home-page .home-hero #home-intro{ grid-column: 1; }
+.home-page .home-hero #home-start{ grid-column: 2; }
+
+/* Приветствие */
+.home-page .home-hero #home-intro{
+  padding: 42px 30px;
+  border-radius: 20px;
+  background: rgba(15,15,30,.55);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 25px 70px rgba(0,0,0,.45);
+}
+
+.home-page .home-hero #home-intro .home-title{
+  text-align:left;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height:1.05;
+  margin:0 0 16px;
+  color:#fff;
+}
+
+.home-page .home-hero #home-intro .home-text{
+  font-size: 17px;
+  line-height:1.6;
+  max-width: 62ch;
+  color: rgba(255,255,255,.9);
+}
+
+.home-page .home-hero #home-start{
+  border-radius: 20px;
+  padding: 18px 18px
+}
+
+
+#viited{
+  width: min(800px, 92vw);
+  margin: 0 auto;
+
+  padding: 20px 24px;
+  border-radius: 14px;
+
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+
+  backdrop-filter: blur(8px);
+}
+
+/* список */
+#viited ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* элементы */
+#viited li{
+  background: rgba(255,255,255,.85);
+  color: #2c1f3a;
+
+  margin: 10px 0;
+  padding: 12px 14px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.08);
+
+  transition: .2s ease;
+}
+
+#viited li:hover{
+  transform: translateX(4px);
+  background: rgba(255,255,255,.95);
+}
+
+#viited a{
+  color: #2c1f3a;
+  font-weight: 700;
+  text-decoration: none;
+  display: block;
+}
+
+@media (max-width: 600px){
+  #viited{
+    padding: 16px;
+  }
 }
