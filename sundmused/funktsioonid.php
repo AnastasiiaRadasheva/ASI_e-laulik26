@@ -19,7 +19,6 @@ function sundmused(string $rss_url, int $limit = 5, int $timeout = 8): void
     $title = (string)($channel->title ?? 'RSS');
     $link  = (string)($channel->link ?? '#');
 
-    // Ümbris "ainult selle lehe jaoks" + galerii grid
     echo '<section class="events-page rss">';
 
     echo '<div class="events-grid">';
@@ -52,13 +51,11 @@ function sundmused(string $rss_url, int $limit = 5, int $timeout = 8): void
 
         $descriptionHtml = (string)($item->description ?? '');
 
-        // Kuupäev
         $dateText = '';
         if ($pubDate && ($ts = strtotime($pubDate))) {
             $dateText = date('d.m.Y H:i', $ts);
         }
 
-        // Turvaline kirjeldus (eemaldame liigsed HTML tagid)
         $safeDescription = strip_tags(
             $descriptionHtml,
             '<div><img><br><p><span><strong><em>'
